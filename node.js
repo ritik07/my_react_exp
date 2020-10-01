@@ -1,6 +1,5 @@
 var express = require("express"),
     app = express(),
-    bodyParser = require("body-parser"),
     request = require('request'),
     passport = require('passport'),
     methodOverride = require('method-override'),
@@ -20,7 +19,6 @@ User = require("./models/user")
 campgrounddb = require('./models/campgrounds')
 mongoose.connect("mongodb://localhost/camp_data");
 
-app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
